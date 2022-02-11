@@ -162,8 +162,10 @@ export default function HomePage() {
         </div>
       </div>
       {isFirstLoad
-        ? <div></div>
-        : <div className="row">
+        ?
+        <div></div>
+        :
+        <div className="row">
           <div className="col">
             <ResultsView result={result} />
           </div>

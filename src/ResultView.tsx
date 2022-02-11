@@ -10,7 +10,8 @@ export default function ResultView({ result }: ResultViewProps) {
   return (
     <React.Fragment>
       {result === undefined
-        ? <div className="text-center">
+        ?
+        <div className="text-center">
           <h1>
             Sin resultados
           </h1>
@@ -18,7 +19,8 @@ export default function ResultView({ result }: ResultViewProps) {
             Revise los datos ingresados y vuelva a intentarlo
           </p>
         </div>
-        : <div className="text-center">
+        :
+        <div className="text-center">
           <h1>
             Comprobante encontrado
           </h1>
