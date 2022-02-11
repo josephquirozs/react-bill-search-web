@@ -29,14 +29,14 @@ export default function HomePage() {
 
   const [result, setResult] = React.useState<Cpe>();
 
-  const formatDate = (value?: Date): string => {
+  function formatDate(value?: Date): string {
     if (value === undefined) {
       return '';
     }
     return DateTime.fromJSDate(value).toFormat('dd/MM/yyyy');
   }
 
-  const parseDate = (value?: string): Date | undefined => {
+  function parseDate(value?: string): Date | undefined {
     if (value === undefined) {
       return undefined;
     }
@@ -46,33 +46,33 @@ export default function HomePage() {
     return DateTime.fromFormat(value, 'dd/MM/yyyy').toJSDate();
   }
 
-  const bindTaxIdChanges = (event: React.ChangeEvent<HTMLInputElement>) => {
+  function bindTaxIdChanges(event: React.ChangeEvent<HTMLInputElement>) {
     bill.ruc = event.currentTarget.value;
   }
 
-  const bindEmittedDateChanges = (event: React.ChangeEvent<HTMLInputElement>) => {
+  function bindEmittedDateChanges(event: React.ChangeEvent<HTMLInputElement>) {
     bill.fechaEmision = parseDate(event.currentTarget.value);
   }
 
-  const bindBillTypeChanges = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  function bindBillTypeChanges(event: React.ChangeEvent<HTMLSelectElement>) {
     bill.codTipoDocumento = event.currentTarget.value;
     setBill(bill);
   }
 
-  const bindSerialChanges = (event: React.ChangeEvent<HTMLInputElement>) => {
+  function bindSerialChanges(event: React.ChangeEvent<HTMLInputElement>) {
     bill.serie = event.currentTarget.value;
   }
 
-  const bindNumberChanges = (event: React.ChangeEvent<HTMLInputElement>) => {
+  function bindNumberChanges(event: React.ChangeEvent<HTMLInputElement>) {
     bill.correlativo = event.currentTarget.value;
   }
 
-  const retrieveBill = async (bill: Cpe): Promise<Cpe | undefined> => {
+  async function retrieveBill(bill: Cpe): Promise<Cpe | undefined> {
     return await service.getOne(bill.ruc!, bill.fechaEmision!, bill.codTipoDocumento!, bill.serie!, bill.correlativo!);
   }
 
-  const trySearch = async (): Promise<void> => {
-    const currentResult = await retrieveBill(bill);
+  async function trySearch(): Promise<void> {
+    const currentResult: Cpe | undefined = await retrieveBill(bill);
     setIsFirstLoad(false);
     setResult(currentResult);
   }
