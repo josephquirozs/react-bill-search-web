@@ -31,7 +31,7 @@ export class CpeService {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
-        })
+        });
         const responseStatus: number = response.status;
         const responseBody: string = await response.text();
         console.log(`Response status ${responseStatus}`);

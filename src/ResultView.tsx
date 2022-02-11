@@ -42,5 +42,5 @@ export default function ResultView({ result }: ResultViewProps) {
         </div>
       }
     </React.Fragment>
-  )
+  );
 }
