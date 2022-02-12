@@ -9,8 +9,7 @@ interface ResultViewProps {
 export default function ResultView({ result }: ResultViewProps) {
   return (
     <React.Fragment>
-      {result === undefined
-        ?
+      {result === undefined ? (
         <div className="text-center">
           <h1>
             Sin resultados
@@ -19,7 +18,7 @@ export default function ResultView({ result }: ResultViewProps) {
             Revise los datos ingresados y vuelva a intentarlo
           </p>
         </div>
-        :
+      ) : (
         <div className="text-center">
           <h1>
             Comprobante encontrado
@@ -40,7 +39,7 @@ export default function ResultView({ result }: ResultViewProps) {
           <span className="mx-4"></span>
           <a href="#" className="link-primary ml-2">Descargar XML</a>
         </div>
-      }
+      )}
     </React.Fragment>
   );
 }

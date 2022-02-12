@@ -161,16 +161,15 @@ export default function HomePage() {
           </form>
         </div>
       </div>
-      {isFirstLoad
-        ?
+      {isFirstLoad ? (
         <div></div>
-        :
+      ) : (
         <div className="row">
           <div className="col">
             <ResultsView result={result} />
           </div>
         </div>
-      }
+      )}
     </div>
   );
 }
