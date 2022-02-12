@@ -5,19 +5,41 @@ import { CpeService } from './CpeService';
 import ResultsView from './ResultView';
 
 const emptyBill: Cpe = new Cpe({
+  idConsultaCpe: undefined,
+  idTipoDocumento: undefined,
   ruc: '',
-  fechaEmision: undefined,
-  codTipoDocumento: '03',
+  razonSocial: undefined,
   serie: '',
-  correlativo: ''
+  correlativo: '',
+  fechaEmision: undefined,
+  xmlEnvio: undefined,
+  xmlRespuesta: undefined,
+  pdfDocumento: undefined,
+  nombreArchivoEnvio: undefined,
+  nombreArchivoRespuesta: undefined,
+  monto: undefined,
+  estadoRegistro: undefined,
+  tipoDocumento: undefined,
+  codTipoDocumento: '03',
 });
 
 const mockBill: Cpe = new Cpe({
+  idConsultaCpe: undefined,
+  idTipoDocumento: undefined,
   ruc: '20604084092',
-  fechaEmision: new Date(),
-  codTipoDocumento: '01',
+  razonSocial: undefined,
   serie: 'F001',
-  correlativo: '1'
+  correlativo: '1',
+  fechaEmision: new Date(),
+  xmlEnvio: undefined,
+  xmlRespuesta: undefined,
+  pdfDocumento: undefined,
+  nombreArchivoEnvio: undefined,
+  nombreArchivoRespuesta: undefined,
+  monto: undefined,
+  estadoRegistro: undefined,
+  tipoDocumento: undefined,
+  codTipoDocumento: '01',
 });
 
 export default function HomePage() {
